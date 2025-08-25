@@ -3,11 +3,11 @@
 ### O que é SOLID?
 👉 SOLID é um conjunto de 5 princípios de programação orientada a objetos que ajudam a escrever códigos melhores: fáceis de entender, manter, escalar e reutilizar.
 
-[S -> Single Responsability (Responsabilidade Única)](./Single%20Responsability/)
-[O -> Open/Close (Aberto/Fechado)](./Open%20-%20Close/)
-[L -> Liskov Substitution (Substituição de Liskov)](./Liskov%20Substitution/)
-[I -> Interface Segregation (Separação de Interfaces)](./Interface%20Segregation/)
-[D -> Dependency Inversion (Inversão de Dependência)](./Dependency%20Inversion/)
+- [S -> Single Responsability (Responsabilidade Única)](./Single%20Responsability/)
+- [O -> Open/Close (Aberto/Fechado)](./Open%20-%20Close/)
+- [L -> Liskov Substitution (Substituição de Liskov)](./Liskov%20Substitution/)
+- [I -> Interface Segregation (Separação de Interfaces)](./Interface%20Segregation/)
+- [D -> Dependency Inversion (Inversão de Dependência)](./Dependency%20Inversion/)
 
 ### Códigos
 
