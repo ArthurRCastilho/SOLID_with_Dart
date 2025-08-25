@@ -9,9 +9,23 @@
 - [I -> Interface Segregation (Separação de Interfaces)](./Interface%20Segregation/)
 - [D -> Dependency Inversion (Inversão de Dependência)](./Dependency%20Inversion/)
 
-### Códigos
+Cada pasta contém mais detalhado como funciona cada principio.
 
-## Single Responsability (Responsabilidade Única)
+## Sumário
+- [O que é SOLID](#o-que-é-solid)
+- [Single Responsibility Principle (SRP)](#-s--single-responsability-responsabilidade-única)
+- [Open/Closed Principle (OCP)](#-o--openclose-abertofechado)
+- [Liskov Substitution Principle (LSP)](#-l--liskov-substitution-substituição-de-liskov)
+- [Interface Segregation Principle (ISP)](#-i--interface-segregation-separação-de-interfaces)
+- [Dependency Inversion Principle (DIP)](#-d--dependency-inversion-inversão-de-dependência)
+- [Considerações Finais](#considerações-finais)
+- [Vantagens](#-vantagens)
+- [Desvantagens](#️-desvantagens)
+- [Resumo](#resumo)
+
+---
+
+## 🟦 S — Single Responsability (Responsabilidade Única)
 👉 "Uma classe deve ter apenas uma responsabilidade."
 
 A responsabilidade de cada classe deve ser muito bem definida, e fazer sua função bem feita.
@@ -63,7 +77,7 @@ class EmailService {
 
 Desta forma conseguimos dividir os conceitos, e deixar bem definido classes com suas responsabilidades únicas
 
-## Open/Close (Aberto/Fechado)
+## 🟩 O — Open/Close (Aberto/Fechado)
 👉 "Classes devem estar abertas para extensão, mas fechadas para modificação."
 
 Ou seja: Ao invés de Modificarmos o código já pronto, podemos criar extensões para aquela classe.
@@ -104,7 +118,7 @@ class CardPayment implements Payment {
 
 Ao fazer isso, sempre que for necessário criar uma nova funcionalidade, não irá afetar as funcionalidades que já estão em funcionamento, e sempre que precisar de uma funcionalidade nova, basta apenas criar uma nova classe.
 
-## Liskov Substitution (Substituição de Liskov)
+## 🟥 L — Liskov Substitution (Substituição de Liskov)
 👉 "Objetos de uma subclasse devem poder substituir objetos da superclasse sem quebrar o programa."
 
 Ou seja, se Filho herda de Pai, ele tem que se comportar como Pai.
@@ -136,7 +150,7 @@ class Penguin extends Bird {
 ```
 Agora Penguin não precisa herdar um funcionamento que não faz sentido para ele.
 
-## Interface Segregation (Separação de Interfaces)
+## 🟨 I — Interface Segregation (Separação de Interfaces)
 👉 "Uma classe não deve ser forçada a implementar métodos que não usa."
 Ou seja, é melhor ter interfaces pequenas do que uma interface gigante.
 
@@ -185,7 +199,7 @@ class Robot implements Workable {
 
 Desta forma cada Classe implementa apenas o que faz sentido
 
-## Dependency Inversion (Inversão de Dependência)
+## 🟪 D — Dependency Inversion (Inversão de Dependência)
 
 👉 "Dependa de abstrações, não de implementações."
 
@@ -234,3 +248,27 @@ class UserRepository {
   }
 }
 ```
+
+
+
+# Considerações Finais
+O SOLID traz uma série de vantagens importantes no desenvolvimento de software, mas também possui alguns desafios e desvantagens no uso.
+
+### ✅ Vantagens:
+
+- Código mais limpo e organizado → Cada classe tem uma função clara, facilitando a leitura e compreensão.
+- Facilidade de manutenção → Mudanças em uma parte do código afetam menos outras partes, evitando “efeito cascata”.
+- Maior reutilização → Classes e interfaces bem definidas podem ser reaproveitadas em outros projetos.
+- Testabilidade → Com baixo acoplamento, fica muito mais fácil criar testes unitários.
+- Escalabilidade → Projetos que seguem SOLID crescem de forma mais sustentável, sem virar um “caos” com o tempo.
+
+### ⛔️ Desvantagens:
+
+- Maior complexidade inicial → Para quem está aprendendo, pode parecer “muita coisa para algo simples”.
+- Mais arquivos e classes → O projeto pode parecer “inchado” com várias abstrações e separações.
+- Exagero na aplicação → Usar SOLID em tudo, até em códigos simples, pode deixar o sistema mais complicado do que precisa ser.
+- Curva de aprendizado → É necessário prática para aplicar corretamente, senão corre-se o risco de “forçar” os princípios de maneira errada.
+
+## Resumo
+👉 Em resumo: usar SOLID é ótimo para projetos médios e grandes, onde manutenção e escalabilidade são essenciais.
+Já em projetos pequenos ou protótipos, pode ser melhor usar uma abordagem mais simples e só aplicar SOLID quando realmente fizer sentido.
