@@ -61,3 +61,12 @@ Aqui simulamos a interface com o usuário. No exemplo usamos apenas o terminal, 
 
 Ponto de inicialização da aplicação - Entrada.
 [main.dart](./main.dart)
+
+## 🧩 Como o DIP foi aplicado aqui?
+
+- Criamos a abstração Database, que define o contrato para qualquer banco de dados.
+- O UserRepository não conhece MySQL ou MongoDB diretamente, ele apenas depende de Database.
+- Implementações concretas (MySQLDatabase e MongoDBDatabase) podem ser trocadas livremente sem alterar o repositório.
+- Na main.dart, podemos injetar qualquer implementação de banco de dados no UserRepository.
+
+✅ Assim, nosso sistema fica flexível, extensível e desacoplado de implementações específicas.
