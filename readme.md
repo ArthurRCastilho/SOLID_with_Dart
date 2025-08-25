@@ -186,3 +186,51 @@ class Robot implements Workable {
 Desta forma cada Classe implementa apenas o que faz sentido
 
 ## Dependency Inversion (Inversão de Dependência)
+
+👉 "Dependa de abstrações, não de implementações."
+
+Ou seja, não devemos depender diretamente de classes concretas, mas sim de inferfaces/abstrações.
+
+❌ Exemplo Errado:
+```Dart
+class MySQLDatabase {
+  void saveData(String data) {
+    print("Salvando $data no MySQL");
+  }
+}
+
+class UserRepository {
+  final MySQLDatabase database = MySQLDatabase();
+
+  void saveUser(String user) {
+    database.saveData(user);
+  }
+}
+```
+
+✅ Exemplo Correto:
+```Dart
+abstract class Database {
+  void saveData(String data);
+}
+
+class MySQLDatabase implements Database {
+  @override
+  void saveData(String data) => print("Salvando $data no MySQL");
+}
+
+class MongoDBDatabase implements Database {
+  @override
+  void saveData(String data) => print("Salvando $data no MongoDB");
+}
+
+class UserRepository {
+  final Database database;
+
+  UserRepository(this.database);
+
+  void saveUser(String user) {
+    database.saveData(user);
+  }
+}
+```
