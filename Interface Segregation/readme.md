@@ -45,8 +45,12 @@ Humano e Robo trabalham, porém apenas humano come
 
 ### Services
 <!-- TODO: Explicar Services. -->
-.... 
-[worker_service.dart](./services/worker_service.dart)
+Os serviços definem as regras de negócio que usam as interfaces separadas.
+No arquivo [worker_service.dart](./services/worker_service.dart) temos dois métodos distintos:
+- ```manageWork(Workable worker) ``` -> Para qualquer entidade que trabale.
+- ```manageEat(Eatable eatable) ``` -> Para qualquer entidade que come.
+
+Desta forma, não forçamos um Robô a implementar eat(), respeitando o ISP.
 
 ### View Models
 Aqui se faz a ponte entre a View e as Models, Services e Repositories. [worker_view_model.dart](./view_models/worker_view_model.dart)
@@ -62,4 +66,13 @@ Ponto de Inicialização da Aplicação - Entrada. [main.dart](./main.dart)
 
 ## 🧩 Como o ISP foi aplicado aqui?
 <!-- TODO: Explicar Como foi aplicado ISP. -->
-....
+O ISP foi aplicado separando responsabilidades em interfaces específicas:
+
+- Workable define apenas o comportamento de quem trabalha.
+- Eatable define apenas o comportamento de quem come.
+
+Assim:
+- A classe Human implementa Workable e Eatable, porque faz as duas coisas.
+- A classe Robot implementa apenas Workable, porque não precisa “comer”.
+
+👉 Dessa forma, nenhuma classe é forçada a implementar métodos que não fazem sentido para ela, exatamente o que o Princípio da Segregação de Interfaces defende.
