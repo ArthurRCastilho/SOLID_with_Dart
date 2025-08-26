@@ -152,7 +152,10 @@ Agora Penguin não precisa herdar um funcionamento que não faz sentido para ele
 
 ## 🟨 I — Interface Segregation (Separação de Interfaces)
 👉 "Uma classe não deve ser forçada a implementar métodos que não usa."
+<br>
+
 Ou seja, é melhor ter interfaces pequenas do que uma interface gigante.
+<br>
 
 ❌ Exemplo Errado:
 ```Dart
